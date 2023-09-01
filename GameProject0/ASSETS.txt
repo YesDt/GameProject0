@@ -1,1 +1,3 @@
 ﻿Content/Coins.png - created by puddin of OpenGameArt.org (https://opengameart.org/content/rotating-coin) and released under the public domain
+
+Content/gold.png - created by Clint Bellanger of OpenGameArt.or (https://opengameart.org/content/gold-treasure-icons) and released under the public domain

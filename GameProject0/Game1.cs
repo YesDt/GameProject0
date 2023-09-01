@@ -11,6 +11,10 @@ namespace GameProject0
 
         private CoinSprite[] _coins;
 
+        private Texture2D _crown;
+        private Texture2D _bars;
+        private Texture2D _chest;
+
         private SpriteFont _title;
         private SpriteFont _pressEnter;
 
@@ -37,6 +41,9 @@ namespace GameProject0
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             _title = Content.Load<SpriteFont>("Title");
+            _crown = Content.Load<Texture2D>("gold");
+            _bars = Content.Load<Texture2D>("gold");
+            _chest = Content.Load<Texture2D>("gold");
             _pressEnter = Content.Load<SpriteFont>("PressEnter");
             foreach (var coin in _coins) coin.LoadContent(Content);
             // TODO: use this.Content to load your game content here
@@ -62,9 +69,11 @@ namespace GameProject0
             _spriteBatch.Begin();
 
             _spriteBatch.DrawString(_title, "GOLD RUSH", new Vector2(270, 70), Color.Gold);
+            _spriteBatch.Draw(_crown, new Vector2(460, 80), new Rectangle(0, 96, 32, 32), Color.White, .75f, new Vector2(16, 16), 1.0f, SpriteEffects.None, 0);
             _spriteBatch.DrawString(_pressEnter, "Press Enter to exit the game", new Vector2(260, 120), Color.Red);
             foreach (var coin in _coins) coin.Draw(gameTime, _spriteBatch);
-
+            _spriteBatch.Draw(_bars, new Vector2(120, 300), new Rectangle(64, 64, 32, 32), Color.White, 0f, new Vector2(16, 16), 2.0f, SpriteEffects.None, 0);
+            _spriteBatch.Draw(_chest, new Vector2(600, 300), new Rectangle(96, 64, 32, 32), Color.White, 0f, new Vector2(16, 16), 3.0f, SpriteEffects.None, 0);
             _spriteBatch.End();
 
             base.Draw(gameTime);
