@@ -9,6 +9,8 @@ namespace GameProject0
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        private SpriteFont _title;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -26,7 +28,7 @@ namespace GameProject0
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            _title = Content.Load<SpriteFont>("Title");
             // TODO: use this.Content to load your game content here
         }
 
@@ -45,6 +47,11 @@ namespace GameProject0
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            _spriteBatch.Begin();
+
+            _spriteBatch.DrawString(_title, "GOLD RUSH", new Vector2(260, 70), Color.Gold);
+
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
